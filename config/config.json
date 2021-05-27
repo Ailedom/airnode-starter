@@ -7,7 +7,7 @@
       "apiSpecifications": {
         "servers": [
           {
-            "url": "{//gateway-test.sbcore.net:443/partner/v1/fx}"
+            "url": "//gateway-test.sbcore.net:443/partner/v1/fx"
           }
         ],
         "paths": {
