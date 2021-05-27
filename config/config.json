@@ -1,37 +1,19 @@
 {
-  "oisFormat": "1.0.0",
-  "title": "FX Indicative Rate Service API",
-  "version": "0.1.0",
-  "apiSpecifications": {
-    "servers": [
-      {
-        "url": "//gateway-test.sbcore.net:443/partner/v1/fx"
-      }
-    ],
-    "paths": {
-      "/indicative-rate/currencypairs": {
-        "get": {
-          "parameters": [
-            {
-              "in": "query",
-              "name": "app-id",
-              "required": true
-            },
-            {
-              "in": "header",
-              "name": "X-Request-ID",
-              "required": true
-            }
-          ]
-        }
-      },
-      "/indicative-rate/rate": {
+  "ois": [
+    {
+      "oisFormat": "1.0.0",
+      "title": "FX Indicative Rate Service API",
+      "version": "0.1.0",
+      "apiSpecifications": {
+        "servers": [
+          {
+            "url": "{//gateway-test.sbcore.net:443/partner/v1/fx}"
+          }
+        ],
+        "paths": {
+        "/indicative-rate/currencypairs": {
           "get": {
             "parameters": [
-              {
-                  "in": "query",
-                  "name": "currencyPair"
-                },
               {
                 "in": "query",
                 "name": "app-id",
@@ -45,79 +27,131 @@
             ]
           }
         },
-        "/indicative-rate/rates": {
-          "get": {
-            "parameters": [
-              {
-                "in": "query",
-                "name": "currencyPairs"
-              },
-              {
-                "in": "query",
-                "name": "app-id",
-                "required": true
-              },
-              {
+        "/indicative-rate/rate": {
+            "get": {
+              "parameters": [
+                {
+                    "in": "query",
+                    "name": "currencyPair"
+                  },
+                {
+                  "in": "query",
+                  "name": "app-id",
+                  "required": true
+                },
+                {
                   "in": "header",
                   "name": "X-Request-ID",
                   "required": true
                 }
-            ]
-          }
-        }
-      
-    },
-    "components": {
-      "securitySchemes": {
-        "{FILL_SECURITY_SCHEME_NAME}": {
-          "in": "{FILL_*}",
-          "type": "{FILL_*}",
-          "name": "{FILL_*}"
-        }
-      }
-    },
-    "security": {
-      "{FILL_SECURITY_SCHEME_NAME}": []
-    }
-  },
-  "endpoints": [
-    {
-      "name": "/indicative-rate/currencypairs",
-      "operation": {
-        "method": "get",
-        "path": "/indicative-rate/currencypairs"
-      },
-      "fixedOperationParameters": [
-        {
-          "operationParameter": {
-            "in": "query",
-            "name": "app-id",
-            "value": true
+              ]
+            }
           },
-          "value": "{FILL_*}"
-        }
-      ],
-      "reservedParameters": [
-        {
-          "name": "{FILL_*}"
-        },
-        {
-          "name": "{FILL_*}"
-        },
-        {
-          "name": "{FILL_*}"
-        }
-      ],
-      "parameters": [
-        {
-          "name": "{FILL_*}",
-          "operationParameter": {
-              "in": "header",
-              "name": "X-Request-ID",
-              "required": true
+          "/indicative-rate/rates": {
+            "get": {
+              "parameters": [
+                {
+                  "in": "query",
+                  "name": "currencyPairs"
+                },
+                {
+                  "in": "query",
+                  "name": "app-id",
+                  "required": true
+                },
+                {
+                    "in": "header",
+                    "name": "X-Request-ID",
+                    "required": true
+                  }
+              ]
+            }
           }
+        
+        },
+        "components": {
+          "securitySchemes": {
+            "{FILL_SECURITY_SCHEME_NAME}": {
+              "in": "{FILL_*}",
+              "type": "{FILL_*}",
+              "name": "{FILL_*}"
+            }
+          }
+        },
+        "security": {
+          "{FILL_SECURITY_SCHEME_NAME}": []
+        }
+      },
+      "endpoints": [
+        {
+          "name": "/indicative-rate/currencypairs",
+          "operation": {
+            "method": "get",
+            "path": "/indicative-rate/currencypairs"
+          },
+          "fixedOperationParameters": [
+            {
+              "operationParameter": {
+                "in": "query",
+                "name": "app-id"
+              },
+              "value": "true"
+            }
+          ],
+          "reservedParameters": [
+            {
+              "name": "{FILL_*}"
+            },
+            {
+              "name": "{FILL_*}"
+            },
+            {
+              "name": "{FILL_*}"
+            }
+          ],
+          "parameters": [
+            {
+              "name": "{FILL_*}",
+              "operationParameter": {
+                "in": "header",
+                "name": "X-Request-ID"
+              }
+            }
+          ]
         }
       ]
     }
-  ]
+  ],
+  "triggers": {
+    "request": [
+      {
+        "endpointId": "{FILL_*}",
+        "oisTitle": "{FILL_OISTITLE}",
+        "endpointName": "{FILL_ENDPOINTNAME}"
+      }
+    ]
+  },
+  "nodeSettings": {
+    "nodeVersion": "0.1.0",
+    "cloudProvider": "aws",
+    "region": "{FILL_*}",
+    "stage": "{FILL_*}",
+    "logFormat": "json",
+    "chains": {
+      "id": "{FILL_*}",
+      "type": "evm",
+      "providers": [
+        {
+          "name": "{FILL_*}",
+          "url": "{FILL_*}"
+        }
+      ],
+      "contracts": {
+        "Airnode": "{FILL_*}",
+        "Convenience": "{FILL_*}"
+      },
+      "providerAdminForRecordCreation": "{FILL_*}"
+    }
+  },
+  "id": "{FILL_ID}"
 }
